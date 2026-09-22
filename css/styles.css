@@ -118,6 +118,11 @@ a {
   color: var(--ink);
 }
 
+.nav .btn-primary,
+.nav .btn-primary:hover {
+  color: var(--paper);
+}
+
 .menu-toggle {
   display: none;
   border: 1px solid var(--line);
