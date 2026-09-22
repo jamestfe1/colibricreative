@@ -2,7 +2,7 @@
 
 Website for Colibri Creative, with a consultation booking flow for visitors.
 
-The site also includes an [Our Results](results.html) section for client work, with case studies and a dedicated results page.
+The site also includes an [Our Results](results.html) page in the spirit of a studio case-study grid, plus individual project pages under `work/`.
 
 Visitors can book a consultation through [Calendly](https://calendly.com/marinatfe5) from:
 
