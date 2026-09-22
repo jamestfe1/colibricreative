@@ -456,6 +456,9 @@ h3 {
 }
 
 .booking {
+  background: var(--forest);
+  color: var(--paper);
+}
 
 .booking .section-head p,
 .booking .lede {
