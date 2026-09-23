@@ -1,13 +1,8 @@
 # Colibri Creative
 
-Website for Colibri Creative, with a consultation booking flow and a Projects tab.
+Static site for Colibri Creative, matching the current [Lovable site](https://colibri-creative-spark.lovable.app/).
 
-Visitors can book a consultation through [Calendly](https://calendly.com/marinatfe5) from:
-
-- The **Book a consultation** buttons in the header, hero, and footer (opens the Calendly popup)
-- The embedded calendar on the home page and [book.html](book.html)
-- The booking section at the bottom of [projects.html](projects.html)
-
-A **Projects** tab in the header opens [projects.html](projects.html).
+- **Projects** tab in the sidebar opens [projects.html](projects.html)
+- Embedded consultation calendar from [Calendly](https://calendly.com/marinatfe5) on the home contact section and the Projects page
 
 Open `index.html` in a browser, or serve the folder with any static file server.

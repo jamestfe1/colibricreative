@@ -1,5 +1,5 @@
 const CALENDLY_URL =
-  "https://calendly.com/marinatfe5?hide_gdpr_banner=1&background_color=fffaf3&text_color=14221c&primary_color=1c3d34";
+  "https://calendly.com/marinatfe5?hide_gdpr_banner=1&background_color=fcfaf6&text_color=17171a&primary_color=8b79a6";
 
 function openCalendlyPopup(event) {
   event.preventDefault();
@@ -12,27 +12,8 @@ function openCalendlyPopup(event) {
   window.open(CALENDLY_URL, "_blank", "noopener,noreferrer");
 }
 
-function setupBookingButtons() {
+document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("[data-calendly-popup]").forEach((button) => {
     button.addEventListener("click", openCalendlyPopup);
   });
-}
-
-function setupMobileNav() {
-  const toggle = document.querySelector(".menu-toggle");
-  const nav = document.querySelector(".nav");
-
-  if (!toggle || !nav) {
-    return;
-  }
-
-  toggle.addEventListener("click", () => {
-    const isOpen = nav.classList.toggle("is-open");
-    toggle.setAttribute("aria-expanded", String(isOpen));
-  });
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  setupBookingButtons();
-  setupMobileNav();
 });
