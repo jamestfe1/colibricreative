@@ -1,1 +1,13 @@
-# colibricreative
+# Colibri Creative
+
+Website for Colibri Creative, with a consultation booking flow for visitors.
+
+Visitors can book a consultation through [Calendly](https://calendly.com/marinatfe5) from:
+
+- The **Book a consultation** buttons in the header, hero, and footer (opens the Calendly popup)
+- The calendar embed on the home page
+- The dedicated [book.html](book.html) page
+
+A **Results** button in the header opens [results.html](results.html).
+
+Open `index.html` in a browser, or serve the folder with any static file server.
