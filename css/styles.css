@@ -268,6 +268,7 @@ a {
 }
 
 .section {
+  scroll-margin-top: 1.5rem;
   padding: 8rem 5rem;
 }
 
@@ -275,9 +276,14 @@ a {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+  gap: 1.5rem;
   margin-bottom: 5rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid var(--border);
+}
+
+#projects .section-head h2 {
+  max-width: 32rem;
 }
 
 .section h2,
