@@ -1,0 +1,611 @@
+:root {
+  --background: oklch(98.5% 0.006 85);
+  --foreground: oklch(20.5% 0.006 300);
+  --primary: oklch(61% 0.07 303);
+  --secondary: oklch(95.5% 0.018 303);
+  --muted: oklch(48% 0.018 300);
+  --accent: oklch(88% 0.055 303);
+  --border: oklch(86% 0.012 300);
+  --sidebar: 18rem;
+  --display: "Instrument Serif", "Times New Roman", serif;
+  --sans: "Work Sans", "Segoe UI", sans-serif;
+  --signature: "La Belle Aurore", cursive;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--sans);
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--accent);
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 100;
+  padding: 0.6rem 0.9rem;
+  background: var(--foreground);
+  color: var(--background);
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.mobile-header {
+  display: none;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in oklab, var(--background) 95%, transparent);
+  backdrop-filter: blur(12px);
+}
+
+.mobile-brand {
+  font-family: var(--display);
+  font-size: 1.25rem;
+  font-style: italic;
+}
+
+.mobile-links {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.mobile-links a {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.mobile-links a[aria-current="page"] {
+  color: var(--foreground);
+}
+
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 40;
+  display: flex;
+  width: var(--sidebar);
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.5rem;
+  border-right: 1px solid var(--border);
+  background: var(--background);
+}
+
+.sidebar-logo {
+  width: 12rem;
+}
+
+.nav {
+  margin-top: 3.5rem;
+}
+
+.nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav li + li {
+  margin-top: 1rem;
+}
+
+.nav a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav a:hover,
+.nav a[aria-current="page"] {
+  color: var(--primary);
+}
+
+.nav-index {
+  font-family: var(--display);
+  font-size: 0.75rem;
+  color: var(--primary);
+}
+
+.sidebar-meta {
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.sidebar-meta p {
+  margin: 0;
+}
+
+.sidebar-rule {
+  width: 2.5rem;
+  height: 1px;
+  margin: 0.6rem 0;
+  background: var(--accent);
+}
+
+.main {
+  margin-left: var(--sidebar);
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 4rem 5rem 5rem;
+}
+
+.hero-meta,
+.section-index,
+.kicker,
+.contact-kicker,
+.footer-meta {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hero-meta {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 17rem;
+  gap: 4rem;
+  align-items: center;
+  padding: 3.5rem 0;
+}
+
+.kicker {
+  margin: 0 0 1.75rem;
+  color: var(--primary);
+}
+
+.hero h1,
+.display {
+  margin: 0;
+  max-width: 56rem;
+  font-family: var(--display);
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 400;
+  line-height: 1.02;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.hero-mark {
+  width: 100%;
+  animation: hover-mark 5s ease-in-out infinite;
+}
+
+.hero-foot {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: end;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.lede {
+  max-width: 36rem;
+  margin: 0;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.text-link {
+  justify-self: end;
+  border-bottom: 1px solid var(--foreground);
+  padding-bottom: 0.2rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.text-link:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.section {
+  scroll-margin-top: 1.5rem;
+  padding: 8rem 5rem;
+}
+
+.section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+#projects .section-head h2 {
+  max-width: 32rem;
+}
+
+.section h2,
+.section-title {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(2.25rem, 4vw, 3.15rem);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.section-index {
+  color: var(--muted);
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+.work-card:nth-child(2) {
+  padding-top: 6rem;
+}
+
+.work-media {
+  overflow: hidden;
+  background: var(--secondary);
+}
+
+.work-media img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.work-card:nth-child(2) img {
+  aspect-ratio: 3 / 4;
+}
+
+.work-card:hover img {
+  transform: scale(1.02);
+}
+
+.work-copy {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.work-num {
+  font-family: var(--display);
+  color: var(--primary);
+}
+
+.work-copy h3 {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.work-copy p {
+  max-width: 28rem;
+  margin: 0.5rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.approach {
+  background: var(--secondary);
+}
+
+.approach-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.approach-card {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.approach-num {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+.approach-card h3 {
+  margin: 2rem 0 0;
+  font-family: var(--display);
+  font-size: 1.9rem;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.approach-card p {
+  margin: 1rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+.quote {
+  margin: 0;
+  padding-left: 1.75rem;
+  border-left: 1px solid var(--accent);
+  font-family: var(--display);
+  font-size: clamp(1.7rem, 3vw, 2.25rem);
+  font-style: italic;
+  line-height: 1.3;
+}
+
+.story-copy h3 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(2.4rem, 4vw, 3.15rem);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.story-copy p {
+  margin: 0 0 1.25rem;
+  color: var(--muted);
+}
+
+.story-body {
+  margin-top: 2rem;
+}
+
+.signature {
+  margin-top: 2.5rem;
+  font-family: var(--signature);
+  font-size: 2.25rem;
+  color: var(--primary);
+}
+
+.contact {
+  border-top: 1px solid var(--border);
+  background: var(--foreground);
+  color: var(--background);
+}
+
+.contact-inner {
+  max-width: 56rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-kicker {
+  margin: 0;
+  color: var(--accent);
+}
+
+.contact h2 {
+  margin: 2rem 0 0;
+  font-family: var(--display);
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.contact-mail {
+  display: inline-block;
+  margin-top: 3rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid color-mix(in oklab, var(--background) 40%, transparent);
+  font-size: 1.25rem;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.contact-mail:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.booking-label {
+  margin-top: 4rem;
+}
+
+.booking-panel {
+  overflow: hidden;
+  width: min(64rem, 100%);
+  margin: 1.5rem auto 0;
+  background: var(--background);
+  min-height: 760px;
+}
+
+.calendly-inline-widget {
+  min-width: 320px;
+  height: 760px;
+}
+
+.booking-note {
+  margin: 1rem 0 0;
+  color: color-mix(in oklab, var(--background) 62%, transparent);
+  font-size: 0.9rem;
+}
+
+.booking-note a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 6rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid color-mix(in oklab, var(--background) 15%, transparent);
+  color: color-mix(in oklab, var(--background) 55%, transparent);
+}
+
+.page-hero {
+  padding: 5rem 5rem 2rem;
+}
+
+.page-hero h1 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.page-hero .lede {
+  margin-top: 1.5rem;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hover-mark {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-rise {
+  animation: 0.9s cubic-bezier(0.19, 1, 0.22, 1) both rise;
+}
+
+@media (max-width: 1024px) {
+  .mobile-header {
+    display: flex;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .main {
+    margin-left: 0;
+  }
+
+  .hero,
+  .section,
+  .page-hero {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .hero {
+    min-height: 88vh;
+    padding-top: 4rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .hero-grid,
+  .hero-foot,
+  .work-grid,
+  .approach-grid,
+  .story-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-grid {
+    gap: 2.5rem;
+    padding: 3.5rem 0;
+  }
+
+  .hero-mark {
+    max-width: 16rem;
+    margin: 0 auto;
+  }
+
+  .text-link {
+    justify-self: start;
+  }
+
+  .work-card:nth-child(2) {
+    padding-top: 0;
+  }
+
+  .section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
