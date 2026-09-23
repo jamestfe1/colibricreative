@@ -523,6 +523,10 @@ h3 {
   color: var(--paper);
 }
 
+.work-tile-wide {
+  grid-column: 1 / -1;
+}
+
 .work-tile-wide .work-tile-media {
   min-height: 360px;
 }
