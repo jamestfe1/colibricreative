@@ -223,6 +223,10 @@ a {
   font-style: italic;
 }
 
+.phrase {
+  white-space: nowrap;
+}
+
 .text-primary {
   color: var(--primary);
 }
@@ -282,7 +286,8 @@ a {
   border-bottom: 1px solid var(--border);
 }
 
-#projects .section-head h2 {
+#projects .section-head h2,
+#approach .section-head h2 {
   max-width: 32rem;
 }
 
@@ -357,6 +362,18 @@ a {
 
 .approach {
   background: var(--secondary);
+}
+
+.approach .section-head {
+  margin-bottom: 2rem;
+}
+
+.approach-intro {
+  max-width: 44rem;
+  margin: 0 0 4.5rem;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--muted);
 }
 
 .approach-grid {
@@ -450,7 +467,7 @@ a {
 }
 
 .contact h2 {
-  margin: 2rem 0 0;
+  margin: 2rem auto 0;
   font-family: var(--display);
   font-size: clamp(2.8rem, 6vw, 4.5rem);
   font-style: normal;
@@ -607,5 +624,9 @@ a {
   .section {
     padding-top: 6rem;
     padding-bottom: 6rem;
+  }
+
+  .contact h2 {
+    font-size: clamp(2.15rem, 7.5vw, 3.25rem);
   }
 }
