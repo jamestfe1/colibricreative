@@ -625,4 +625,8 @@ a {
     padding-top: 6rem;
     padding-bottom: 6rem;
   }
+
+  .contact h2 {
+    font-size: clamp(2.15rem, 7.5vw, 3.25rem);
+  }
 }
