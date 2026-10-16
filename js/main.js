@@ -1,5 +1,5 @@
 const CALENDLY_URL =
-  "https://calendly.com/marinatfe5?hide_gdpr_banner=1&background_color=fcfaf6&text_color=17171a&primary_color=8b79a6";
+  "https://calendly.com/marinatfe5?hide_gdpr_banner=1&background_color=fcfaf6&text_color=17171a&primary_color=5b4fa8";
 
 function openCalendlyPopup(event) {
   event.preventDefault();
